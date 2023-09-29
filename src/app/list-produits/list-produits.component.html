@@ -1,0 +1,61 @@
+<h1>Recherche produit</h1>
+<div class="product__search__container">
+  <p class="product__search__parag">Code:</p>
+  <input type="text" [(ngModel)]="searchCode" />
+</div>
+<hr />
+
+<div class="wrapper__flex">
+  <div style="flex: 1">
+    <div
+      class="product__container"
+      *ngFor="let product of searchedProducts(); let i = index"
+    >
+      <div class="product__btn__container">
+        <p>Produit: {{ product.libelle }}</p>
+        <input
+          class="product__btn"
+          type="button"
+          value="Ajuster TVA"
+          [disabled]="product.tauxTVA == 0.02"
+          (click)="updateTVA(i)"
+        />
+      </div>
+      <ul>
+        <li>Id: {{ product.idProduit }}</li>
+        <li>Code: {{ product.code }}</li>
+        <li>Prix unitaire: {{ product.prixUnitaire }}</li>
+        <li>Taux TVA: {{ product.tauxTVA }}</li>
+      </ul>
+    </div>
+  </div>
+
+  <form #addForm="ngForm" class="product__form">
+    <h1>Ajout d'un Produit</h1>
+    <div>
+      <label> Id Produit </label>
+      <input name="idProduit" class="form-control" type="text" ngModel />
+    </div>
+
+    <div>
+      <label> Code </label>
+      <input name="code" class="form-control" type="text" ngModel />
+    </div>
+
+    <div>
+      <label> Libelle </label>
+      <input name="libelle" class="form-control" type="text" ngModel />
+    </div>
+
+    <div>
+      <label> Prix unitaire </label>
+      <input name="prixUnitaire" class="form-control" type="text" ngModel />
+    </div>
+
+    <div>
+      <label> taux TVA </label>
+      <input name="tauxTVA" class="form-control" type="text" ngModel />
+    </div>
+    <input type="submit" value="Ajouter" (click)="addProduct(addForm)" />
+  </form>
+</div>

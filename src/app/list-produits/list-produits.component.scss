@@ -1,0 +1,44 @@
+.product {
+    &__container {
+        padding: 1rem 2rem;
+        border: 0.1rem solid black;
+        border-radius: 2rem;
+        margin-bottom: 1rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__btn {
+        margin-left: 1rem;
+
+        &__container {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__search {
+        &__container {
+            display: flex;
+            align-items: center;
+        }
+
+        &__parag {
+            margin-right: 0.5rem;
+        }
+    }
+}
+
+.wrapper__flex {
+    display: flex;
+    align-items: center;
+}
+
+.product__form {
+    margin-left: 1rem;
+
+    flex: 1;
+    align-self: start;
+}
