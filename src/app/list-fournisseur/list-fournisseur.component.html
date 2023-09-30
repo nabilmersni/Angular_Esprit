@@ -24,7 +24,7 @@
     [ngStyle]="{
       'background-color': fournisseur.libelle == 'hp' ? 'green' : 'yellow'
     }"
-    (dblclick)="test(i)"
+    (dblclick)="deleteFournisseur(i)"
   >
     <legend>IdFournisseur : {{ fournisseur.idFournisseur }}</legend>
     <table>

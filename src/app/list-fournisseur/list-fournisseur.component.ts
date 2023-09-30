@@ -26,7 +26,7 @@ export class ListFournisseurComponent {
     { idFournisseur: 400, code: '40ABC452', libelle: 'asus' },
   ];
 
-  test = (index: number) => {
+  deleteFournisseur = (index: number) => {
     console.log(index);
     this.fournisseurs.splice(index, 1);
   };
