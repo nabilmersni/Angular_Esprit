@@ -1,0 +1,47 @@
+<h1>Atelier n°1 : Manipulation de composant (partie1)</h1>
+<h3>EX1:</h3>
+<br />
+<div style="border: 0.1rem solid black; margin-bottom: 1rem" [hidden]="hide">
+  <ul>
+    <li>IdFournisseur: {{ idFournisseur }}</li>
+    <li>Code: {{ code }}</li>
+    <li>Libelle: {{ libelle }}</li>
+  </ul>
+</div>
+<input
+  (click)="toggleFournisseur()"
+  type="button"
+  [value]="hide == false ? 'hide' : 'show'"
+/>
+<br />
+<hr />
+<br />
+<h3>EX2:</h3>
+<div *ngFor="let fournisseur of fournisseurs; let i = index">
+  <fieldset
+    *ngIf="fournisseur.idFournisseur <= 100"
+    style="margin-bottom: 1rem"
+    [ngStyle]="{
+      'background-color': fournisseur.libelle == 'hp' ? 'green' : 'yellow'
+    }"
+    (dblclick)="test(i)"
+  >
+    <legend>IdFournisseur : {{ fournisseur.idFournisseur }}</legend>
+    <table>
+      <tr>
+        <td>Code:</td>
+        <td
+          [ngStyle]="{
+            'font-weight': fournisseur.code.startsWith('2A') ? '800' : '400'
+          }"
+        >
+          {{ fournisseur.code }}
+        </td>
+      </tr>
+      <tr>
+        <td>Libelle:</td>
+        <td>{{ fournisseur.libelle }}</td>
+      </tr>
+    </table>
+  </fieldset>
+</div>
