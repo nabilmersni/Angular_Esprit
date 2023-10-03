@@ -1,7 +1,14 @@
-<div style="padding: 1rem">
-  <!-- <app-list-produits></app-list-produits> -->
-  <!-- <app-list-fournisseur></app-list-fournisseur> -->
+<!-- <div style="padding: 1rem">
+  <!- - <app-list-produits></app-list-produits> - ->
+  <!- - <app-list-fournisseur></app-list-fournisseur> - ->
   <a [routerLink]="['/invoiceManagement']">Invoice Management</a>
   <hr />
+  <router-outlet></router-outlet>
+</div> -->
+<!-- <app-accueil></app-accueil>
+<app-list-user></app-list-user> -->
+
+<div style="padding: 1rem">
+  <app-header></app-header>
   <router-outlet></router-outlet>
 </div>

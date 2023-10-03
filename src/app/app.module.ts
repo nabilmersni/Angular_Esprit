@@ -9,9 +9,17 @@ import { ListFournisseurComponent } from './list-fournisseur/list-fournisseur.co
 import { MainInvoiceComponent } from './main-invoice/main-invoice.component';
 import { InvoiceListComponent } from './invoice-list/invoice-list.component';
 import { InvoiceComponent } from './invoice/invoice.component';
+import { AccueilComponent } from './workshop/accueil/accueil.component';
+import { ListUserComponent } from './workshop/list-user/list-user.component';
+import { HeaderComponent } from './workshop/header/header.component';
+import { HomeComponent } from './workshop/home/home.component';
+import { MainUserComponent } from './workshop/main-user/main-user.component';
+import { MainProductComponent } from './workshop/main-product/main-product.component';
+import { MainProviderComponent } from './workshop/main-provider/main-provider.component';
+import { NotFoundPageComponent } from './workshop/not-found-page/not-found-page.component';
 
 @NgModule({
-  declarations: [AppComponent, ListProduitsComponent, ListFournisseurComponent, MainInvoiceComponent, InvoiceListComponent, InvoiceComponent],
+  declarations: [AppComponent, ListProduitsComponent, ListFournisseurComponent, MainInvoiceComponent, InvoiceListComponent, InvoiceComponent, AccueilComponent, ListUserComponent, HeaderComponent, HomeComponent, MainUserComponent, MainProductComponent, MainProviderComponent, NotFoundPageComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
