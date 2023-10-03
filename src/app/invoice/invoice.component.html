@@ -1,0 +1,16 @@
+<h1>invoice Details</h1>
+<div *ngIf="currentInvoice; else invoiceNotFound">
+  <ng-container *ngIf="currentInvoice.active; else invoiceNotActive">
+    <p>Id Facture: {{ currentInvoice.idFacture }}</p>
+    <p>Montant Facture: {{ currentInvoice.montantFacture }}</p>
+    <p>Montant Remise: {{ currentInvoice.montantRemise }}</p>
+    <p>Date Facture: {{ currentInvoice.dateFacture }}</p>
+  </ng-container>
+
+  <ng-template #invoiceNotActive>
+    Impossible de visualiser les détails de la facture
+  </ng-template>
+</div>
+
+<ng-template #invoiceNotFound> Invoice Not Found </ng-template>
+<a routerLink="/invoiceManagement">Retour</a>

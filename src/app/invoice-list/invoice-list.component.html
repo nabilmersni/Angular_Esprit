@@ -1,0 +1,7 @@
+<h1>Invoice List</h1>
+<ul>
+  <div class="invoice__list" *ngFor="let invoice of invoices; let i = index">
+    <li>Facture : {{ invoice.idFacture }}</li>
+    <a [routerLink]="['/invoice', invoice.idFacture]">Details</a>
+  </div>
+</ul>
