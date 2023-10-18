@@ -17,10 +17,26 @@ import { MainUserComponent } from './workshop/main-user/main-user.component';
 import { MainProductComponent } from './workshop/main-product/main-product.component';
 import { MainProviderComponent } from './workshop/main-provider/main-provider.component';
 import { NotFoundPageComponent } from './workshop/not-found-page/not-found-page.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [AppComponent, ListProduitsComponent, ListFournisseurComponent, MainInvoiceComponent, InvoiceListComponent, InvoiceComponent, AccueilComponent, ListUserComponent, HeaderComponent, HomeComponent, MainUserComponent, MainProductComponent, MainProviderComponent, NotFoundPageComponent],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  declarations: [
+    AppComponent,
+    ListProduitsComponent,
+    ListFournisseurComponent,
+    MainInvoiceComponent,
+    InvoiceListComponent,
+    InvoiceComponent,
+    AccueilComponent,
+    ListUserComponent,
+    HeaderComponent,
+    HomeComponent,
+    MainUserComponent,
+    MainProductComponent,
+    MainProviderComponent,
+    NotFoundPageComponent,
+  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
