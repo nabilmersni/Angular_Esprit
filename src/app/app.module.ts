@@ -18,6 +18,7 @@ import { MainProductComponent } from './workshop/main-product/main-product.compo
 import { MainProviderComponent } from './workshop/main-provider/main-provider.component';
 import { NotFoundPageComponent } from './workshop/not-found-page/not-found-page.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AddProductTDComponent } from './add-product-td/add-product-td.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { HttpClientModule } from '@angular/common/http';
     MainProductComponent,
     MainProviderComponent,
     NotFoundPageComponent,
+    AddProductTDComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],

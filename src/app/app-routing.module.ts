@@ -29,6 +29,7 @@ const routes: Routes = [
     component: MainUserComponent,
     children: [{ path: 'category/:category', component: ListUserComponent }],
   },
+
   {
     path: '**',
     component: NotFoundPageComponent,

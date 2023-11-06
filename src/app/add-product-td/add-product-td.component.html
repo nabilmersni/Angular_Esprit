@@ -1,0 +1,179 @@
+<div class="container my-5">
+  <h1 class="mb-5">Template Driven Form</h1>
+  <form #f="ngForm" (ngSubmit)="addProduct(f)">
+    <div class="form-group mb-3">
+      <label for="idProduct">Id Product</label>
+      <input
+        type="text"
+        class="form-control"
+        id="idProduct"
+        placeholder="Enter idProduct"
+        ngModel
+        name="idProduct"
+        required
+        #idInput="ngModel"
+      />
+
+      <div *ngIf="idInput.invalid && idInput.touched">
+        <div
+          *ngIf="idInput.errors?.['required']"
+          class="alert alert-danger mt-1"
+          role="alert"
+        >
+          required
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="code">Code</label>
+      <input
+        type="text"
+        class="form-control"
+        id="code"
+        placeholder="Enter code"
+        ngModel
+        name="code"
+        #codeInput="ngModel"
+        pattern="[a-zA-Z-0-9]{8}"
+        required
+      />
+
+      <div *ngIf="codeInput.invalid && codeInput.touched">
+        <div
+          *ngIf="codeInput.errors?.['required']"
+          class="alert alert-danger mt-1"
+          role="alert"
+        >
+          required
+        </div>
+        <div
+          *ngIf="codeInput.errors?.['pattern']"
+          class="alert alert-danger mt-1"
+          role="alert"
+        >
+          pattern
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="libelle">Libelle</label>
+      <input
+        type="text"
+        class="form-control"
+        id="libelle"
+        placeholder="Enter libelle"
+        ngModel
+        name="libelle"
+        #libelleInput="ngModel"
+        minlength="3"
+        required
+      />
+
+      <div *ngIf="libelleInput.invalid && libelleInput.touched">
+        <div
+          *ngIf="libelleInput.errors?.['required']"
+          class="alert alert-danger mt-1"
+          role="alert"
+        >
+          required
+        </div>
+        <div
+          *ngIf="libelleInput.errors?.['minlength']"
+          class="alert alert-danger mt-1"
+        >
+          minlength
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="prixUnitaire">Prix Unitaire</label>
+      <input
+        type="text"
+        class="form-control"
+        id="prixUnitaire"
+        placeholder="Enter prixUnitaire"
+        ngModel
+        name="prixUnitaire"
+        #prixUnitaireInput="ngModel"
+        pattern="[1-9][0-9]*"
+        required
+      />
+
+      <div *ngIf="prixUnitaireInput.invalid && prixUnitaireInput.touched">
+        <div
+          *ngIf="prixUnitaireInput.errors?.['required']"
+          class="alert alert-danger mt-1"
+          role="alert"
+        >
+          required
+        </div>
+        <div
+          *ngIf="prixUnitaireInput.errors?.['pattern']"
+          class="alert alert-danger mt-1"
+          role="alert"
+        >
+          pattern
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group mb-3">
+      <button
+        (click)="nextEvent()"
+        type="button"
+        class="btn btn-primary"
+        [hidden]="!hidden"
+        [disabled]="f.invalid"
+      >
+        Next
+      </button>
+    </div>
+
+    <div class="form-group mb-3" [hidden]="hidden">
+      <label for="idDetailProduct">Id Detail Product</label>
+      <input
+        type="text"
+        class="form-control"
+        id="idDetailProduct"
+        placeholder="Enter idDetailProduct"
+        ngModel
+        name="idDetailProduct"
+        #idDetailProductInput="ngModel"
+      />
+    </div>
+
+    <div class="form-group mb-3" [hidden]="hidden">
+      <label for="dateCreation">Date Creation</label>
+      <input
+        type="date"
+        class="form-control"
+        id="dateCreation"
+        placeholder="Enter dateCreation"
+        ngModel
+        name="dateCreation"
+        #dateCreationInput="ngModel"
+      />
+    </div>
+
+    <div class="form-group mb-3" [hidden]="hidden">
+      <label for="categoryProduct">Category Product</label>
+      <input
+        type="text"
+        class="form-control"
+        id="categoryProduct"
+        placeholder="Enter categoryProduct"
+        ngModel
+        name="categoryProduct"
+        #categoryProductInput="ngModel"
+      />
+    </div>
+
+    <!-- <button type="submit" class="btn btn-primary" [disabled]="f.invalid"> -->
+    <button type="submit" class="btn btn-primary" [hidden]="hidden">
+      Submit
+    </button>
+  </form>
+</div>
